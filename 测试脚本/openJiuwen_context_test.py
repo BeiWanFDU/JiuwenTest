@@ -24,11 +24,8 @@ def process_context(input_path:str,output_path:str):
             for item in context_selected_by_jiuwen["context"]["qa_list"]
         ]
 
-
         # 将本轮对话添加到上下文服务，并获取本轮对话所对应的上下文id，context_id_jiuwen
         context_id_jiuwen = add_context(df.at[index,"user"],df.at[index,"answer"])["context_id"][0]
-
-
 
         print(f"九问的上下文id：{context_id_jiuwen}")
         print(f"九问的选择上下文id：{context_id_selected_by_jiuwen}")
@@ -233,73 +230,6 @@ def query_context(
     max_qa_tokens: int = 1000,
     base_url: str = "http://9.15.87.116:19000"
 ) -> dict:
-    # 用于模拟测试
-    # return {
-    #     "context":
-    #         {
-    #             "qa_list": [
-    #                 {
-    #                     "context_id": "1",
-    #                     "label": "xx",
-    #                     "owner_agent": "",
-    #                     "query": {
-    #                         "role": "user",
-    #                         "content": "xx"
-    #                     },
-    #                     "answer": {
-    #                         "role": "assistant",
-    #                         "content": "xx"
-    #                     },
-    #                     "re_write_query": "xx",
-    #                     "custom_summary": "",
-    #                     "date": "xxx"
-    #                 },
-    #                 {
-    #                     "context_id": "2",
-    #                     "label": "xx",
-    #                     "owner_agent": "",
-    #                     "query": {
-    #                         "role": "user",
-    #                         "content": "xx"
-    #                     },
-    #                     "answer": {
-    #                         "role": "assistant",
-    #                         "content": "xx"
-    #                     },
-    #                     "re_write_query": "xx",
-    #                     "custom_summary": "",
-    #                     "date": "xxx"
-    #                 }
-    #             ],
-    #             "abstract_qa": [
-    #                 {
-    #                     "context_id": "",
-    #                     "query": {
-    #                         "role": "user",
-    #                         "content": "xx"
-    #                     },
-    #                     "answer": {
-    #                         "role": "assistant",
-    #                         "content": "xx"
-    #                     }
-    #                 }
-    #             ]
-    #         },
-    #     "context_msg": [
-    #         {
-    #             "context_id": "",
-    #             "query": {
-    #                 "role": "user",
-    #                 "content": "xx"
-    #             },
-    #             "answer": {
-    #                 "role": "assistant",
-    #                 "content": "xx"
-    #             }
-    #         }
-    #     ],
-    #     "related_qa": [""]
-    # }
 
     url = f"{base_url}/api/v1/context/query"
     payload = {
