@@ -12,9 +12,12 @@ def compress_context(input_path: str, output_path: str):
         system_prompt = f.read()
 
     for index, row in df.iterrows():
+        if pd.notna(df.at[index, "user_compressed"]) and df.at[index, "assistant_compressed"] != "":
+            print(f"第{index}轮已有结果，跳过")
+            continue
         user_prompt = json.dumps([
             {"role": "user", "content": df.at[index, "user"]},
-            {"role": "assistant", "content": df.at[index, "answer"]}
+            {"role": "assistant", "content": df.at[index, "assistant"]}
         ], ensure_ascii=False)
 
         response = 模型调用脚本_外部模型.invoke_model(system_prompt, user_prompt, "qwen3.5-27b")

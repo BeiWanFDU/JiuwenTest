@@ -20,11 +20,12 @@ df.to_excel(XLSX, sheet_name='Sheet1', index=False)
 print("旧打分列已清除")
 
 # 重新打分
-judge_single(XLSX, XLSX, answer_col="answer_jiuwen_10轮", score_col_prefix="score_jiuwen_10轮")
-judge_single(XLSX, XLSX, answer_col="answer_jiuwen_20轮", score_col_prefix="score_jiuwen_20轮")
-judge_single(XLSX, XLSX, answer_col="answer_no_context",  score_col_prefix="score_no_context")
-judge_single(XLSX, XLSX, answer_col="answer_5+15",        score_col_prefix="score_5+15")
-judge_single(XLSX, XLSX, answer_col="answer_5+15_3000",   score_col_prefix="score_5+15_3000")
+judge_single(XLSX, XLSX, answer_col="answer_jiuwen_10轮",    score_col_prefix="score_jiuwen_10轮")
+judge_single(XLSX, XLSX, answer_col="answer_jiuwen_20轮",    score_col_prefix="score_jiuwen_20轮")
+judge_single(XLSX, XLSX, answer_col="answer_no_context",     score_col_prefix="score_no_context")
+judge_single(XLSX, XLSX, answer_col="answer_5+15",           score_col_prefix="score_5+15")
+judge_single(XLSX, XLSX, answer_col="answer_5+15_3000",      score_col_prefix="score_5+15_3000")
+judge_single(XLSX, XLSX, answer_col="answer_20_compressed",  score_col_prefix="score_20_compressed")
 
 print("**********************************")
 print("全部完成")
