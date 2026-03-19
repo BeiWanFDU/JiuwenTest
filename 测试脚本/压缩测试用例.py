@@ -44,5 +44,5 @@ def compress_context(input_path: str, output_path: str):
 
 
 if __name__ == "__main__":
-    compress_context("../测试用例/0311模型生成测试用例_jiuwen_select.xlsx",
-                     "../测试用例/0311模型生成测试用例_jiuwen_select.xlsx")
+    compress_context("../测试用例/0311模型生成测试用例.xlsx",
+                     "../测试用例/0311模型生成测试用例.xlsx")
