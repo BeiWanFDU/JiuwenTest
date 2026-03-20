@@ -1,3 +1,3 @@
 import pandas as pd
-df = pd.read_csv("0311模型生成测试用例_jiuwen_真20轮.csv")
-df.to_excel("00311模型生成测试用例_jiuwen_真20轮.xlsx",index=False)
+df = pd.read_csv("0307AISF精选测试用例.csv")
+df.to_excel("0307AISF精选测试用例.xlsx",index=False)

@@ -180,7 +180,6 @@ def answer_by_qwen32b_5_and_15_3000(input_path: str, output_path: str):
 def build_20_compressed_context(df, current_index):
     # 取当前行在excel中位置之前的所有行（按行顺序，不区分对话），最多20轮
     prev_indices = [idx for idx in df.index if idx < current_index]
-
     context = []
     n = len(prev_indices)
     for i, row_idx in enumerate(prev_indices):
@@ -286,4 +285,4 @@ if __name__ == "__main__":
 
     print("**********************************")
     print("全部完成")
-    print("**********************************")
+    (print("**********************************"))
